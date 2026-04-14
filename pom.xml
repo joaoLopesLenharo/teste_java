@@ -38,6 +38,13 @@
             <version>3.0.3</version>
         </dependency>
 
+        <!-- Evita avisos SLF4J no arranque (PDFBox traz slf4j-api 1.x) -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-nop</artifactId>
+            <version>1.7.36</version>
+        </dependency>
+
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>

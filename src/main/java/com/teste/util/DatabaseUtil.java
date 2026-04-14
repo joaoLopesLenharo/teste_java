@@ -47,7 +47,7 @@ public final class DatabaseUtil {
         try (Connection conn = getConnection();
              Statement stmt = conn.createStatement()) {
             stmt.execute(sql);
-            System.out.println("✓ Banco de dados inicializado com sucesso.");
+            System.out.println("[OK] Banco de dados inicializado com sucesso.");
         } catch (SQLException e) {
             System.err.println("Erro ao inicializar banco de dados: " + e.getMessage());
             e.printStackTrace();
