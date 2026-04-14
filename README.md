@@ -237,6 +237,22 @@ java -jar target/teste-pratico-java-1.0-SNAPSHOT.jar
 java -jar target/teste-pratico-java-1.0-SNAPSHOT.jar --console
 ```
 
+**Importante**
+
+- O ficheiro gerado é **`teste-pratico-java-1.0-SNAPSHOT.jar`** (extensão **`.jar`**), na pasta `target/`. Não é um ficheiro **`.java`** (código-fonte). Para correr a aplicação empacotada use sempre **`java -jar ...`** no terminal (ou o script abaixo).
+- O projeto compila para **Java 17**. O comando `java` que executa o JAR tem de ser do **JDK/JRE 17 ou superior**. Se o seu `java -version` mostrar **1.8.x** (Java 8), vai ocorrer:
+
+  `UnsupportedClassVersionError: ... class file version 61.0 ... only recognizes up to 52.0`
+
+  **Solução:** use o `java.exe` do JDK 17 (ajuste o **PATH** ou defina **`JAVA_HOME`** para o JDK 17, como na secção “No compiler is provided”), feche o terminal e volte a executar `java -jar ...`.
+
+**Script (Windows)** que usa `JAVA_HOME` se existir:
+
+```powershell
+.\scripts\executar-jar.ps1
+.\scripts\executar-jar.ps1 --console
+```
+
 ## Testes
 
 ```bash
