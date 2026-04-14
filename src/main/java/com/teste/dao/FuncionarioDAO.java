@@ -1,6 +1,7 @@
 package com.teste.dao;
 
 import com.teste.model.Funcionario;
+import com.teste.repository.FuncionarioRepository;
 import com.teste.util.DatabaseUtil;
 
 import java.math.BigDecimal;
@@ -11,10 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Data Access Object para operações CRUD de Funcionário no SQLite.
- * Requisito 4 - Persistência com SQLite.
+ * Implementação JDBC/SQLite do repositório de funcionários.
  */
-public class FuncionarioDAO {
+public class FuncionarioDAO implements FuncionarioRepository {
 
     private static final DateTimeFormatter DB_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 

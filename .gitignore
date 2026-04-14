@@ -37,12 +37,17 @@ nbdist/
 
 # Maven
 target/
+dependency-reduced-pom.xml
 
 
 *.zip
 
 # SQLite database
 *.db
+
+# Relatórios gerados no diretório atual (modo --console)
+relatorio_rh.csv
+relatorio_rh.pdf
 
 # OS
 .DS_Store

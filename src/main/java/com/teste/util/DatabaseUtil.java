@@ -6,22 +6,32 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- * Classe utilitária para gerenciar a conexão com o banco de dados SQLite.
- * Requisito 4 - Uso de SQLite para armazenamento e persistência.
+ * Conexão SQLite e criação de schema. A URL JDBC pode ser alterada para testes (ex.: memória).
  */
-public class DatabaseUtil {
+public final class DatabaseUtil {
 
-    private static final String URL = "jdbc:sqlite:funcionarios.db";
+    private static volatile String jdbcUrl = "jdbc:sqlite:funcionarios.db";
 
-    /**
-     * Obtém uma conexão com o banco de dados SQLite.
-     */
-    public static Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(URL);
+    private DatabaseUtil() {
     }
 
     /**
-     * Inicializa o banco de dados criando a tabela de funcionários caso não exista.
+     * Define a URL JDBC (útil para testes com {@code jdbc:sqlite::memory:}).
+     */
+    public static void configurarUrl(String url) {
+        jdbcUrl = url;
+    }
+
+    public static String getJdbcUrl() {
+        return jdbcUrl;
+    }
+
+    public static Connection getConnection() throws SQLException {
+        return DriverManager.getConnection(jdbcUrl);
+    }
+
+    /**
+     * Inicializa o banco criando a tabela se necessário.
      */
     public static void inicializarBanco() {
         String sql = """
