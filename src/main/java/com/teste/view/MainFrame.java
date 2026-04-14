@@ -89,7 +89,7 @@ public class MainFrame extends JFrame {
     }
 
     private void configurarJanela() {
-        setTitle("Módulo RH — ERP");
+        setTitle("Modulo RH - ERP");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(1280, 860);
         setMinimumSize(new Dimension(1100, 720));
@@ -116,7 +116,7 @@ public class MainFrame extends JFrame {
         JLabel titulo = new JLabel("Módulo RH");
         titulo.setFont(new Font("Segoe UI", Font.BOLD, 22));
         titulo.setForeground(TEXT_PRIMARY);
-        JLabel sub = new JLabel("   ERP • MVC + Service + DTO • SQLite");
+        JLabel sub = new JLabel("   ERP | MVC + Service + DTO | SQLite");
         sub.setFont(new Font("Segoe UI", Font.PLAIN, 13));
         sub.setForeground(TEXT_SECONDARY);
         JPanel esq = new JPanel(new FlowLayout(FlowLayout.LEFT, 0, 0));
@@ -124,9 +124,9 @@ public class MainFrame extends JFrame {
         esq.add(titulo);
         esq.add(sub);
 
-        JButton btnDemo = criarBotaoEstilizado("▶ Demonstração completa (3.1–3.12)", ACCENT, ACCENT_HOVER);
+        JButton btnDemo = criarBotaoEstilizado("Demonstração completa (3.1-3.12)", ACCENT, ACCENT_HOVER);
         btnDemo.addActionListener(e -> acaoExecutarTodos());
-        JButton btnLimpar = criarBotaoEstilizado("🗑 Limpar banco", DANGER, DANGER_HOVER);
+        JButton btnLimpar = criarBotaoEstilizado("Limpar banco", DANGER, DANGER_HOVER);
         btnLimpar.addActionListener(e -> acaoLimparBanco());
 
         JPanel dir = new JPanel(new FlowLayout(FlowLayout.RIGHT, 8, 0));
@@ -201,7 +201,7 @@ public class MainFrame extends JFrame {
     }
 
     private JLabel labelCard() {
-        JLabel l = new JLabel("—");
+        JLabel l = new JLabel("-");
         l.setFont(new Font("Segoe UI", Font.BOLD, 16));
         l.setForeground(TEXT_PRIMARY);
         return l;
@@ -225,7 +225,7 @@ public class MainFrame extends JFrame {
         JPanel bar = new JPanel(new FlowLayout(FlowLayout.LEFT, 8, 4));
         bar.setOpaque(false);
         bar.add(new JLabel("Busca (nome):"));
-        buscaNomeField = criarCampoTexto("contém…");
+        buscaNomeField = criarCampoTexto("contem...");
         buscaNomeField.setColumns(18);
         bar.add(buscaNomeField);
 
@@ -283,7 +283,7 @@ public class MainFrame extends JFrame {
     }
 
     private JPanel criarPainelTabela() {
-        JPanel card = criarCard("📋 Quadro de pessoal (DTO)");
+        JPanel card = criarCard("Quadro de pessoal (DTO)");
 
         String[] colunas = {"ID", "Nome", "Data Nasc.", "Salário (R$)", "Função", "Idade", "SM"};
         tableModel = new DefaultTableModel(colunas, 0) {
@@ -303,11 +303,11 @@ public class MainFrame extends JFrame {
 
         JPanel btnPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 8, 6));
         btnPanel.setOpaque(false);
-        JButton btnEditar = criarBotaoEstilizado("✏ Editar", WARNING, WARNING_HOVER);
+        JButton btnEditar = criarBotaoEstilizado("Editar", WARNING, WARNING_HOVER);
         btnEditar.addActionListener(e -> acaoEditar());
-        JButton btnRemover = criarBotaoEstilizado("✕ Remover", DANGER, DANGER_HOVER);
+        JButton btnRemover = criarBotaoEstilizado("Remover", DANGER, DANGER_HOVER);
         btnRemover.addActionListener(e -> acaoRemover());
-        JButton btnAtualizar = criarBotaoEstilizado("↻ Atualizar", ACCENT, ACCENT_HOVER);
+        JButton btnAtualizar = criarBotaoEstilizado("Atualizar", ACCENT, ACCENT_HOVER);
         btnAtualizar.addActionListener(e -> { atualizarCombosFuncao(); atualizarTabela(); atualizarDashboard(); });
         btnPanel.add(btnEditar);
         btnPanel.add(btnRemover);
@@ -348,7 +348,7 @@ public class MainFrame extends JFrame {
     }
 
     private JPanel criarPainelFormulario() {
-        JPanel card = criarCard("➕ Cadastro");
+        JPanel card = criarCard("Cadastro");
         card.setPreferredSize(new Dimension(300, 0));
 
         JPanel form = new JPanel();
@@ -373,9 +373,9 @@ public class MainFrame extends JFrame {
         JPanel btnPanel = new JPanel(new GridLayout(1, 2, 8, 0));
         btnPanel.setOpaque(false);
         btnPanel.setMaximumSize(new Dimension(Integer.MAX_VALUE, 40));
-        btnSalvar = criarBotaoEstilizado("💾 Salvar", SUCCESS, SUCCESS_HOVER);
+        btnSalvar = criarBotaoEstilizado("Salvar", SUCCESS, SUCCESS_HOVER);
         btnSalvar.addActionListener(e -> acaoSalvar());
-        JButton btnCancelar = criarBotaoEstilizado("✕ Cancelar", new Color(100, 100, 115), new Color(130, 130, 145));
+        JButton btnCancelar = criarBotaoEstilizado("Cancelar", new Color(100, 100, 115), new Color(130, 130, 145));
         btnCancelar.addActionListener(e -> limparFormulario());
         btnPanel.add(btnSalvar);
         btnPanel.add(btnCancelar);
@@ -398,7 +398,7 @@ public class MainFrame extends JFrame {
     }
 
     private JPanel criarPainelOperacoes() {
-        JPanel card = criarCard("🔧 Operações do teste");
+        JPanel card = criarCard("Operações do teste");
         card.setPreferredSize(new Dimension(300, 0));
 
         JPanel ops = new JPanel();
@@ -428,9 +428,9 @@ public class MainFrame extends JFrame {
         ops.add(Box.createVerticalStrut(4));
         ops.add(linhaBotao("Dashboard (texto)", e -> operacaoDashboardTexto()));
         ops.add(Box.createVerticalStrut(4));
-        ops.add(linhaBotao("Exportar CSV…", e -> acaoExportarCsv()));
+        ops.add(linhaBotao("Exportar CSV...", e -> acaoExportarCsv()));
         ops.add(Box.createVerticalStrut(4));
-        ops.add(linhaBotao("Exportar PDF…", e -> acaoExportarPdf()));
+        ops.add(linhaBotao("Exportar PDF...", e -> acaoExportarPdf()));
 
         JScrollPane sp = new JScrollPane(ops);
         sp.setBorder(null);
@@ -447,7 +447,7 @@ public class MainFrame extends JFrame {
     }
 
     private JPanel criarPainelResultado() {
-        JPanel card = criarCard("📄 Resultado");
+        JPanel card = criarCard("Resultado");
 
         outputArea = new JTextArea();
         outputArea.setEditable(false);
@@ -462,7 +462,7 @@ public class MainFrame extends JFrame {
         JScrollPane scrollPane = new JScrollPane(outputArea);
         scrollPane.setBorder(BorderFactory.createLineBorder(BORDER));
 
-        JButton btnLimpar = criarBotaoEstilizado("🧹 Limpar", new Color(100, 100, 115), new Color(130, 130, 145));
+        JButton btnLimpar = criarBotaoEstilizado("Limpar saída", new Color(100, 100, 115), new Color(130, 130, 145));
         btnLimpar.addActionListener(e -> outputArea.setText(""));
 
         JPanel barraInferior = new JPanel(new FlowLayout(FlowLayout.RIGHT));
@@ -511,14 +511,14 @@ public class MainFrame extends JFrame {
         if (d.getMaisVelho() != null) {
             dashMaisVelho.setText(d.getMaisVelho().getNome() + " (" + d.getMaisVelho().getIdade() + " a.)");
         } else {
-            dashMaisVelho.setText("—");
+            dashMaisVelho.setText("-");
         }
         StringBuilder an = new StringBuilder();
         for (FuncionarioDTO f : d.getAniversariantesMes()) {
             if (an.length() > 0) an.append(", ");
             an.append(f.getNome());
         }
-        dashAniv.setText(an.length() == 0 ? "—" : an.toString());
+        dashAniv.setText(an.length() == 0 ? "-" : an.toString());
     }
 
     private void acaoSalvar() {
@@ -548,11 +548,11 @@ public class MainFrame extends JFrame {
 
         if (editandoId > 0) {
             controller.atualizar(editandoId, nome, dataNasc, salario, funcao);
-            exibirResultado("✓ Atualizado.\n");
+            exibirResultado("Atualizado.\n");
         } else {
             Funcionario f = controller.inserir(nome, dataNasc, salario, funcao);
             FuncionarioDTO dto = controller.toDTO(f);
-            exibirResultado(String.format("✓ Inserido: %s | %s | R$ %s%n", dto.getNome(), dto.getDataNascimentoFormatada(), dto.getSalarioFormatado()));
+            exibirResultado(String.format("Inserido: %s | %s | R$ %s%n", dto.getNome(), dto.getDataNascimentoFormatada(), dto.getSalarioFormatado()));
         }
         limparFormulario();
         atualizarTabela();
@@ -573,7 +573,7 @@ public class MainFrame extends JFrame {
         dataNascField.setText(FormatUtil.formatarData(f.getDataNascimento()));
         salarioField.setText(f.getSalario().toPlainString());
         funcaoField.setText(f.getFuncao());
-        btnSalvar.setText("💾 Atualizar");
+        btnSalvar.setText("Atualizar");
     }
 
     private void acaoRemover() {
@@ -587,7 +587,7 @@ public class MainFrame extends JFrame {
         int c = JOptionPane.showConfirmDialog(this, "Remover " + nome + "?", "Confirmar", JOptionPane.YES_NO_OPTION);
         if (c == JOptionPane.YES_OPTION) {
             controller.remover(id);
-            exibirResultado("✓ Removido.\n");
+            exibirResultado("Removido.\n");
             atualizarTabela();
             atualizarDashboard();
         }
@@ -599,7 +599,7 @@ public class MainFrame extends JFrame {
         salarioField.setText("");
         funcaoField.setText("");
         editandoId = -1;
-        btnSalvar.setText("💾 Salvar");
+        btnSalvar.setText("Salvar");
     }
 
     private void acaoInserirPadrao() {
@@ -617,14 +617,14 @@ public class MainFrame extends JFrame {
 
     private void acaoRemoverJoao() {
         controller.removerPorNome("João");
-        exibirResultado("✓ 'João' removido (se existia).\n");
+        exibirResultado("'João' removido (se existia).\n");
         atualizarTabela();
         atualizarDashboard();
     }
 
     private void acaoExecutarTodos() {
         int c = JOptionPane.showConfirmDialog(this,
-                "Executar demonstração 3.1–3.12? Limpa o banco, reinsere dados, remove João e aplica aumento.",
+                "Executar demonstração 3.1-3.12? Limpa o banco, reinsere dados, remove João e aplica aumento.",
                 "Confirmar", JOptionPane.YES_NO_OPTION);
         if (c != JOptionPane.YES_OPTION) return;
         exibirResultado(Principal.executarRequisitosTexto(controller));
@@ -636,7 +636,7 @@ public class MainFrame extends JFrame {
         int c = JOptionPane.showConfirmDialog(this, "Remover todos os registros?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
         if (c == JOptionPane.YES_OPTION) {
             controller.removerTodos();
-            exibirResultado("✓ Banco limpo.\n");
+            exibirResultado("Banco limpo.\n");
             atualizarTabela();
             atualizarDashboard();
         }
@@ -657,7 +657,7 @@ public class MainFrame extends JFrame {
         List<FuncionarioDTO> depois = controller.listarTodosDTO();
         StringBuilder sb = new StringBuilder("Aumento 10% (DTO):\n");
         for (int i = 0; i < antes.size(); i++) {
-            sb.append(String.format("  %s: %s → %s%n", depois.get(i).getNome(), antes.get(i).getSalarioFormatado(), depois.get(i).getSalarioFormatado()));
+            sb.append(String.format("  %s: %s -> %s%n", depois.get(i).getNome(), antes.get(i).getSalarioFormatado(), depois.get(i).getSalarioFormatado()));
         }
         exibirResultado(sb.toString());
         atualizarTabela();
@@ -669,7 +669,7 @@ public class MainFrame extends JFrame {
         for (var e : controller.agruparPorFuncaoDTO().entrySet()) {
             sb.append("  ").append(e.getKey()).append(":\n");
             for (FuncionarioDTO f : e.getValue()) {
-                sb.append(String.format("    • %s — R$ %s%n", f.getNome(), f.getSalarioFormatado()));
+                sb.append(String.format("    - %s | R$ %s%n", f.getNome(), f.getSalarioFormatado()));
             }
         }
         exibirResultado(sb.toString());
@@ -678,14 +678,14 @@ public class MainFrame extends JFrame {
     private void operacaoAniversariantes() {
         StringBuilder sb = new StringBuilder("Aniversariantes meses 10 e 12 (DTO):\n");
         for (FuncionarioDTO f : controller.buscarAniversariantesDTO(10, 12)) {
-            sb.append(String.format("  • %s — %s%n", f.getNome(), f.getDataNascimentoFormatada()));
+            sb.append(String.format("  - %s | %s%n", f.getNome(), f.getDataNascimentoFormatada()));
         }
         exibirResultado(sb.toString());
     }
 
     private void operacaoMaisVelho() {
         FuncionarioDTO m = controller.buscarMaisVelhoDTO();
-        exibirResultado(m == null ? "—\n" : String.format("Mais velho (DTO): %s — %d anos%n", m.getNome(), m.getIdade()));
+        exibirResultado(m == null ? "-\n" : String.format("Mais velho (DTO): %s | %d anos%n", m.getNome(), m.getIdade()));
     }
 
     private void operacaoOrdenar() {
@@ -722,7 +722,7 @@ public class MainFrame extends JFrame {
         }
         sb.append("Aniversariantes:\n");
         for (FuncionarioDTO f : d.getAniversariantesMes()) {
-            sb.append("  • ").append(f.getNome()).append("\n");
+            sb.append("  - ").append(f.getNome()).append("\n");
         }
         exibirResultado(sb.toString());
     }
